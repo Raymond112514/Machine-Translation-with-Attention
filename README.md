@@ -19,11 +19,13 @@ In the decoder unit, the target sentence goes through the embedding layer with a
 
 ## Preprocessing
 
-Both the input and target sentences are normalized to Unicode and lowercased. '<sos>' (start of sentence) and '<eos>' (end of sentence) tokens are inserted at the beginning and end of each sentence. The list of preprocessed sentences is then fitted to the 'Vocab' class, creating a list of dictionaries. Each word is added to the dictionary only if its occurrence in the sentences is greater than 2. When each data batch is retrieved, sentences are padded to the same length.
+Both the input and target sentences are normalized to Unicode and lowercased. `<sos>` (start of sentence) and `<eos>` (end of sentence) tokens are inserted at the beginning and end of each sentence. The list of preprocessed sentences is then fitted to the `Vocab` class, creating a list of dictionaries. Each word is added to the dictionary only if its occurrence in the sentences is greater than 2. When each data batch is retrieved, sentences are padded to the same length.
 
 ## Training
 
-For training, 50,000 sentences are used, with a train, validation, and test ratio of 0.6, 0.2, and 0.2, respectively. In Google Colab, a T4 GPU is utilized to expedite training. The Adam optimizer is employed with a fixed learning rate of 0.001, and the negative log-likelihood loss function is applied. Initial experiments with a learning rate of 0.01 showed that the validation loss quickly overshoots the minimum within the first few epochs. Different hidden state sizes/embedding sizes were also experimented with (32, 64, 128, 256, 512), confirming that a hidden size and embedding size of 128 yield the optimum model. The training and validation curve is depicted below.
+For training, 50,000 sentences are used, with a train, validation, and test ratio of 0.6, 0.2, and 0.2, respectively. In Google Colab, a T4 GPU is used to speed up training. The Adam optimizer is employed with a fixed learning rate of 0.001, and the negative log-likelihood loss function is applied. 
+
+Initial experiments with a learning rate of 0.01 showed that the validation loss quickly overshoots the minimum within the first few epochs. Different hidden state sizes/embedding sizes were also experimented (with range of 32, 64, 128, 256, 512). The results confirmed that a hidden size and embedding size of 128 yield the optimum model. The training and validation curve is shown below.
 
 <div align="center">
   <img src="Graphics/Loss.png" width="50%">
@@ -32,9 +34,13 @@ For training, 50,000 sentences are used, with a train, validation, and test rati
   <p>Figure 2: Training and validation loss</p>
 </div>
 
-From the graph, it is evident that after 10-15 epochs, the validation loss reaches its minimum. The model parameters at epoch 13 are used for testing, resulting in a validation loss of 0.742.
+From the graph, we see that after 10-15 epochs, the validation loss reaches its minimum. The model parameters at epoch 13 are used for testing. The validation loss at that point is 0.742.
 
 ## Model Evaluation
+
+After the model has been trained, both greedy search and beam search method is used to convert the logits into sentences. The test loss for the trained model is 0.809. A few samples of the outputted sentence is duplicated below.
+
+#### Greedy search
 
 
 
