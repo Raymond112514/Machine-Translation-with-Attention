@@ -47,49 +47,49 @@ Sample 1
 True: you must be more polite      
 
 Sample 2     
-Predicted: we're in the same boat      
+> Predicted: we're in the same boat      
 True: we're in the same boat     
 
 Sample 3     
-Predicted: tell tom what tom said      
+> Predicted: tell tom what tom said      
 True: tell me what tom said     
 
 Sample 4    
-Predicted: they are too soon     
+> Predicted: they are too soon     
 True: they arrived too soon     
 
 Sample 5    
-Predicted: were you worried? of that?      
+> Predicted: were you worried? of that?      
 True: were you aware of that?     
 
 Sample 6    
-Predicted: the light is closed     
+> Predicted: the light is closed     
 True: the lid is closed    
 
 #### Beam search
 
 Sample 1     
-Predicted: they must've be more polite     
+> Predicted: they must've be more polite     
 True: you must be more polite      
 
 Sample 2     
-Predicted: we in the air boat     
+> Predicted: we in the air boat     
 True: we're in the same boat     
 
 Sample 3    
-Predicted: tell me what tom is     
+> Predicted: tell me what tom is     
 True: tell me what tom said     
 
 Sample 4    
-Predicted: they are too early     
+> Predicted: they are too early     
 True: they arrived too soon      
 
 Sample 5    
-Predicted: were you talking to that?     
+> Predicted: were you talking to that?     
 True: were you aware of that?      
 
 Sample 6     
-Predicted: the light is closed      
+> Predicted: the light is closed      
 True: the lid is closed      
 
 
