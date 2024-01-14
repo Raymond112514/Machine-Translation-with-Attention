@@ -90,7 +90,9 @@ True: were you aware of that?
 
 Sample 6     
 > Predicted: the light is closed      
-True: the lid is closed      
+True: the lid is closed
+
+From the results, we see that the model yield certain level of success in the sense that the model is able to translate certain sentences correctly. In the case of incorrect translation, the model is able to use words that are contextually close or relevant. 
 
 
 
