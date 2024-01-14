@@ -44,8 +44,10 @@ After the model has been trained, both greedy search and beam search method is u
 
 Sample 1
 `----------------------------------------------------------------`
+
 Predicted: they must be more polite 
 True: you must be more polite 
+
 `----------------------------------------------------------------`
 
 Sample 2
