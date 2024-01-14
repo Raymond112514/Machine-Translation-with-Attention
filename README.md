@@ -10,9 +10,12 @@ The encoder's output is then fed into the attention class, implemented based on 
 
 In the decoder unit, the target sentence goes through the embedding layer with a dimension of 128. The result is concatenated with the context vector from the attention unit, followed by passing through a GRU unit and a linear unit with log softmax activation to produce logits. The logits are used for word prediction.
 
-[Model Architecture Image]
-
-[Source: Sequence to Sequence Learning with Neural Networks - https://arxiv.org/pdf/1409.3215.pdf]
+<div align="center">
+  <img src="Graphics/Arch.png" width="50%">
+</div>
+<div align="center">
+  <p>Figure 1: Model architecture of the encoder and decoder model. Source: Sequence to Sequence Learning with Neural Networks [https://arxiv.org/pdf/1409.3215.pdf]</p>
+</div>
 
 ## Preprocessing
 
@@ -22,7 +25,12 @@ Both the input and target sentences are normalized to Unicode and lowercased. '<
 
 For training, 50,000 sentences are used, with a train, validation, and test ratio of 0.6, 0.2, and 0.2, respectively. In Google Colab, a T4 GPU is utilized to expedite training. The Adam optimizer is employed with a fixed learning rate of 0.001, and the negative log-likelihood loss function is applied. Initial experiments with a learning rate of 0.01 showed that the validation loss quickly overshoots the minimum within the first few epochs. Different hidden state sizes/embedding sizes were also experimented with (32, 64, 128, 256, 512), confirming that a hidden size and embedding size of 128 yield the optimum model. The training and validation curve is depicted below.
 
-[Training and Validation Loss Image]
+<div align="center">
+  <img src="Graphics/Loss.png" width="50%">
+</div>
+<div align="center">
+  <p>Figure 2: Training and validation loss</p>
+</div>
 
 From the graph, it is evident that after 10-15 epochs, the validation loss reaches its minimum. The model parameters at epoch 13 are used for testing, resulting in a validation loss of 0.742.
 
