@@ -10,6 +10,11 @@ The encoder output is then passed into the attention class, which is implmented 
 
 In the decoder unit, the target sentence is passed into the embedding layer with dimension 128. The result is then concatenated with the context vector from the attention unit. This is then passed into a GRU unit and a linear unit with log softmax activation to output the logits. The logits is then used for word prediction. 
 
+<div align="center">
+  <img src="Graphics/Arch.png" width="30%">
+</div>
+
+
 ## Preprocessing
 
 Both the input and target sentence is normalized to unicode and lowercased. At the beginning and end of each sentence, a start of sentence token '<sos>' and an end of sentence token '<eos>' is inserted. The list of preprocessed sentences is then fitted to the 'Vocab' class, which creates a list of dictionaries. Each word is only added to the dictionary with the number of occurence in the sentences is greater than 2. When each patch of data is retrieved, each sentence is then padded to the same length. 
