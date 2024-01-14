@@ -38,9 +38,36 @@ From the graph, we see that after 10-15 epochs, the validation loss reaches its 
 
 ## Model Evaluation
 
-After the model has been trained, both greedy search and beam search method is used to convert the logits into sentences. The test loss for the trained model is 0.809. A few samples of the outputted sentence is duplicated below.
+After the model has been trained, both greedy search and beam search method is used to convert the logits into sentences. The test loss for the trained model is 0.7648. A few samples of the outputted sentence is duplicated below.
 
 #### Greedy search
+
+Sample 1 ----------------------------------------------------------------
+Predicted: they must be more polite 
+True: you must be more polite 
+-------------------------------------------------------------------------
+Sample 2 ----------------------------------------------------------------
+Predicted: we're in the same boat 
+True: we're in the same boat 
+-------------------------------------------------------------------------
+Sample 3 ----------------------------------------------------------------
+Predicted: tell tom what tom said 
+True: tell me what tom said 
+-------------------------------------------------------------------------
+Sample 4 ----------------------------------------------------------------
+Predicted: they are too soon 
+True: they arrived too soon 
+-------------------------------------------------------------------------
+Sample 5 ----------------------------------------------------------------
+Predicted: were you worried? of that? 
+True: were you aware of that? 
+-------------------------------------------------------------------------
+Sample 6 ----------------------------------------------------------------
+Predicted: the light is closed 
+True: the lid is closed 
+-------------------------------------------------------------------------
+
+#### Beam search
 
 
 
